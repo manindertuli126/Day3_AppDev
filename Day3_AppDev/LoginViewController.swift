@@ -30,11 +30,16 @@ class LoginViewController: UIViewController {
         loginMessage.text = ""
         if loginEmail.text == "a@a.com"{
             if loginPassword.text == "manu"{
-                let alert = UIAlertController(title: "Alert", message: "Login Successfully", preferredStyle: .alert)
-                let action1 = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(action1)
-                self.present(alert, animated: true)
+//                let alert = UIAlertController(title: "Alert", message: "Login Successfully", preferredStyle: .alert)
+//                let action1 = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                alert.addAction(action1)
+//                self.present(alert, animated: true)
 //                loginMessage.text = "Login Successful"
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let homevc = sb.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+                self.navigationController?.pushViewController(homevc, animated: true)
+ //                let homeVC = sb.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+//                self.navigationController?.pushViewController(homeVC, animated: true)
             }else{
                 loginPasswordValidation.text="Invalid Password"
             }
